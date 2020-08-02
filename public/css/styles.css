@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+body { box-sizing: border-box; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+
+.clock { width: 90vh; height: 90vh; background-color: salmon; border-radius: 50%; display: grid; grid-template-columns: repeat(13, 1fr); grid-template-rows: repeat(11, 1fr); }
+
+.clock .center { width: 30px; height: 30px; background-color: black; }
+
+.clock .number { font-family: "Raleway"; font-size: 50px; width: auto; height: auto; display: flex; align-items: center; justify-content: center; }
+
+.clock .one { grid-column-start: 10; grid-row-start: 2; }
+
+.clock .two { grid-column-start: 12; grid-row-start: 4; }
+
+.clock .tree { grid-column-start: 13; grid-row-start: 6; }
+
+.clock .four { grid-column-start: 12; grid-row-start: 8; }
+
+.clock .five { grid-column-start: 10; grid-row-start: 10; }
+
+.clock .six { grid-column-start: 7; grid-row-start: 11; }
+
+.clock .seven { grid-column-start: 4; grid-row-start: 10; }
+
+.clock .eight { grid-column-start: 2; grid-row-start: 8; }
+
+.clock .nine { grid-column-start: 1; grid-row-start: 6; }
+
+.clock .ten { grid-column-start: 2; grid-row-start: 4; }
+
+.clock .eleven { grid-column-start: 4; grid-row-start: 2; }
+
+.clock .twelve { grid-column-start: 7; grid-row-start: 1; }

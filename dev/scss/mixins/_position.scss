@@ -1,0 +1,4 @@
+@mixin position($x, $y) {
+    grid-column-start: $x;
+    grid-row-start: $y;
+}

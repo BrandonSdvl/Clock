@@ -1,0 +1,90 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock {
+    width: 90vh;
+    height: 90vh;
+    background-color: salmon;
+    border-radius: 50%;
+    display: grid;
+    // grid-template-rows: 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr;
+    // grid-template-columns: 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr;
+    // grid-template-columns: 1fr .5fr 1fr .5fr 1fr .5fr 1fr .5fr 1fr;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+
+    .center {
+        width: 30px;
+        height: 30px;
+        background-color: black;
+    }
+
+    .number {
+        font-family: $main-font;
+        font-size: $size-font;
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .one {
+        @include position(10, 2);
+    }
+
+    .two {
+        @include position(12, 4);
+    }
+
+    .tree {
+        @include position(13, 6);
+    }
+
+    .four {
+        @include position(12, 8);
+    }
+
+    .five {
+        @include position(10, 10);
+    }
+
+    .six {
+        @include position(7, 11);
+
+    }
+
+    .seven {
+        @include position(4, 10);
+
+    }
+
+    .eight {
+        @include position(2, 8);
+
+    }
+
+    .nine {
+        @include position(1, 6);
+    }
+
+    .ten {
+        @include position(2, 4);
+
+    }
+
+    .eleven {
+        @include position(4, 2);
+
+    }
+
+    .twelve {
+        @include position(7, 1);
+    }
+}
