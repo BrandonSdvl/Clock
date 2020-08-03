@@ -15,7 +15,7 @@ gulp.task('pug', () => {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./'))
 })
 
 gulp.task("styles", () => {
@@ -50,7 +50,7 @@ gulp.task("babel", () => {
 
 gulp.task('default', () => {
     server.init({
-        server: './public'
+        server: './'
     })
     gulp.watch('./dev/views/**/*.pug', gulp.series('pug')).on('change', server.reload)
     gulp.watch('./dev/scss/**/*.scss', gulp.series('styles'))
