@@ -1,32 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
-body { box-sizing: border-box; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+body { box-sizing: border-box; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #F7EEE5; }
 
-.clock { width: 90vh; height: 90vh; background-color: salmon; border-radius: 50%; display: grid; grid-template-columns: repeat(13, 1fr); grid-template-rows: repeat(11, 1fr); }
+.clock { width: 90vh; height: 90vh; background-color: transparent; display: grid; grid-template-columns: repeat(13, 1fr); grid-template-rows: repeat(13, 1fr); color: #000; border: 3px solid #351C40; border-radius: 50%; }
 
-.clock .center { width: 30px; height: 30px; background-color: black; }
-
-.clock .number { font-family: "Raleway"; font-size: 50px; width: auto; height: auto; display: flex; align-items: center; justify-content: center; }
+.clock .number { font-family: "Rubik"; font-size: 50px; width: auto; height: auto; display: flex; align-items: center; justify-content: center; }
 
 .clock .one { grid-column-start: 10; grid-row-start: 2; }
 
 .clock .two { grid-column-start: 12; grid-row-start: 4; }
 
-.clock .tree { grid-column-start: 13; grid-row-start: 6; }
+.clock .tree { grid-column-start: 13; grid-row-start: 7; }
 
-.clock .four { grid-column-start: 12; grid-row-start: 8; }
+.clock .four { grid-column-start: 12; grid-row-start: 10; }
 
-.clock .five { grid-column-start: 10; grid-row-start: 10; }
+.clock .five { grid-column-start: 10; grid-row-start: 12; }
 
-.clock .six { grid-column-start: 7; grid-row-start: 11; }
+.clock .six { grid-column-start: 7; grid-row-start: 13; }
 
-.clock .seven { grid-column-start: 4; grid-row-start: 10; }
+.clock .seven { grid-column-start: 4; grid-row-start: 12; }
 
-.clock .eight { grid-column-start: 2; grid-row-start: 8; }
+.clock .eight { grid-column-start: 2; grid-row-start: 10; }
 
-.clock .nine { grid-column-start: 1; grid-row-start: 6; }
+.clock .nine { grid-column-start: 1; grid-row-start: 7; }
 
 .clock .ten { grid-column-start: 2; grid-row-start: 4; }
 
 .clock .eleven { grid-column-start: 4; grid-row-start: 2; }
 
 .clock .twelve { grid-column-start: 7; grid-row-start: 1; }
+
+.center { grid-column-start: 7; grid-row-start: 7; width: 40px; height: 40px; border-radius: 50%; margin: auto auto; z-index: 1000; background-color: #351C40; }
+
+.minutes, .hours { -webkit-clip-path: polygon(50% 1%, 70% 45%, 80% 50%, 20% 50%, 30% 45%); clip-path: polygon(50% 1%, 70% 45%, 80% 50%, 20% 50%, 30% 45%); }
+
+.minutes { grid-column-start: 7; grid-row-start: 2; grid-row-end: 13; background-color: #351C40; transform: rotate(180deg); }
+
+.hours { grid-column-start: 7; grid-row-start: 4; grid-row-end: 11; z-index: 900; background-color: #9FB2AB; }

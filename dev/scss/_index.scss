@@ -5,25 +5,20 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: $background;
 }
 
 .clock {
     width: 90vh;
     height: 90vh;
-    background-color: salmon;
-    border-radius: 50%;
+    background-color: transparent;
     display: grid;
-    // grid-template-rows: 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr;
-    // grid-template-columns: 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr .3fr 1fr;
-    // grid-template-columns: 1fr .5fr 1fr .5fr 1fr .5fr 1fr .5fr 1fr;
     grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    color: $font-color-dark;
+    border: 3px solid $primary-color;
+    border-radius: 50%;
 
-    .center {
-        width: 30px;
-        height: 30px;
-        background-color: black;
-    }
 
     .number {
         font-family: $main-font;
@@ -44,34 +39,34 @@ body {
     }
 
     .tree {
-        @include position(13, 6);
+        @include position(13, 7);
     }
 
     .four {
-        @include position(12, 8);
+        @include position(12, 10);
     }
 
     .five {
-        @include position(10, 10);
+        @include position(10, 12);
     }
 
     .six {
-        @include position(7, 11);
+        @include position(7, 13);
 
     }
 
     .seven {
-        @include position(4, 10);
+        @include position(4, 12);
 
     }
 
     .eight {
-        @include position(2, 8);
+        @include position(2, 10);
 
     }
 
     .nine {
-        @include position(1, 6);
+        @include position(1, 7);
     }
 
     .ten {
@@ -87,4 +82,33 @@ body {
     .twelve {
         @include position(7, 1);
     }
+}
+
+.center {
+    @include position(7, 7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: auto auto;
+    z-index: 1000;
+    background-color: $primary-color;
+}
+
+.minutes,
+.hours {
+    clip-path: polygon(50% 1%, 70% 45%, 80% 50%, 20% 50%, 30% 45%);
+}
+
+.minutes {
+    @include position(7, 2);
+    grid-row-end: 13;
+    background-color: $primary-color;
+    transform: rotate(180deg);
+}
+
+.hours {
+    @include position(7, 4);
+    grid-row-end: 11;
+    z-index: 900;
+    background-color: $second-color;
 }
