@@ -9,20 +9,31 @@ body {
 }
 
 .clock {
-    width: 90vh;
-    height: 90vh;
     background-color: transparent;
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(13, 1fr);
-    color: $font-color-dark;
-    border: 3px solid $primary-color;
+    color: $font-color;
+    border: 5px solid $primary-color;
     border-radius: 50%;
 
+    width: 80vw;
+    height: 80vw;
+    font-size: $font-size-small;
+    box-shadow: 0px 0px 155px 20px $second-color, inset 0px 0px 155px 20px $second-color;
+
+    @include tablet {
+        font-size: $font-size-medium;
+    }
+
+    @include laptop {
+        width: 90vh;
+        height: 90vh;
+        font-size: $font-size-big;
+    }
 
     .number {
         font-family: $main-font;
-        font-size: $size-font;
         width: auto;
         height: auto;
         display: flex;
@@ -82,33 +93,39 @@ body {
     .twelve {
         @include position(7, 1);
     }
-}
 
-.center {
-    @include position(7, 7);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin: auto auto;
-    z-index: 1000;
-    background-color: $primary-color;
-}
+    .center {
+        @include position(7, 7);
+        width: 60%;
+        height: 60%;
+        border-radius: 50%;
+        margin: auto auto;
+        z-index: 1000;
+        background-color: $primary-color;
+    }
 
-.minutes,
-.hours {
-    clip-path: polygon(50% 1%, 70% 45%, 80% 50%, 20% 50%, 30% 45%);
-}
+    .minutes,
+    .hours {
+        clip-path: polygon(40% 5%, 60% 5%, 60% 50%, 40% 50%);
+    }
 
-.minutes {
-    @include position(7, 2);
-    grid-row-end: 13;
-    background-color: $primary-color;
-    transform: rotate(180deg);
-}
+    .seconds {
+        @include position(7, 2);
+        clip-path: polygon(45% 3%, 55% 3%, 55% 50%, 45% 50%);
+        grid-row-end: 13;
+        background-color: $third-color;
+    }
 
-.hours {
-    @include position(7, 4);
-    grid-row-end: 11;
-    z-index: 900;
-    background-color: $second-color;
+    .minutes {
+        @include position(7, 2);
+        grid-row-end: 13;
+        background-color: $primary-color;
+    }
+
+    .hours {
+        @include position(7, 4);
+        grid-row-end: 11;
+        z-index: 900;
+        background-color: $second-color;
+    }
 }

@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="public/css/styles.css")
-        title .: Reloj Analógico :.
+        title .: Clock :.
     body
         .clock
             span.number.one 1
@@ -19,7 +19,8 @@ html(lang="en")
             span.number.ten 10
             span.number.eleven 11
             span.number.twelve 12
-            .hours
-            .minutes
-            .seconds
+            #needleSecond.seconds
+            #needleHour.hours
+            #needleMinute.minutes
             .center
+        script(src="public/js/scripts-min.js")
