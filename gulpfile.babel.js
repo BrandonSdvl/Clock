@@ -15,7 +15,7 @@ gulp.task('pug', () => {
         .pipe(pug({
             pretty: true
         }))
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('./docs'))
 })
 
 gulp.task("styles", () => {
@@ -30,7 +30,7 @@ gulp.task("styles", () => {
         .pipe(
             autoprefixer()
         )
-        .pipe(gulp.dest('./public/css'))
+        .pipe(gulp.dest('./docs/css'))
         .pipe(server.stream())
 })
 
@@ -45,12 +45,12 @@ gulp.task("babel", () => {
         )
         .pipe(concat("scripts-min.js"))
         .pipe(uglify())
-        .pipe(gulp.dest("./public/js/"))
+        .pipe(gulp.dest("./docs/js/"))
 })
 
 gulp.task('default', () => {
     server.init({
-        server: './'
+        server: './docs/'
     })
     gulp.watch('./dev/views/**/*.pug', gulp.series('pug')).on('change', server.reload)
     gulp.watch('./dev/scss/**/*.scss', gulp.series('styles'))
