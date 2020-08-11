@@ -1,0 +1,55 @@
+.seconds-container,
+.minutes-container,
+.hours-container {
+    display: flex;
+    justify-content: center;
+}
+
+.seconds,
+.minutes,
+.hours {
+    border-radius: 20px;
+    height: 50%;
+}
+
+.minutes,
+.hours {
+    width: 6px;
+
+    @include laptop {
+        width: 10px;
+    }
+}
+
+.seconds-container {
+    @include position(7, 2);
+    grid-row-end: 13;
+
+    .seconds {
+        background-color: $third-color;
+        width: 3px;
+
+        @include tablet {
+            width: 6px;
+        }
+    }
+}
+
+.minutes-container {
+    @include position(7, 3);
+    grid-row-end: 12;
+
+    .minutes {
+        background-color: $primary-color;
+    }
+}
+
+.hours-container {
+    @include position(7, 4);
+    grid-row-end: 11;
+    z-index: 900;
+
+    .hours {
+        background-color: $second-color;
+    }
+}

@@ -1,4 +1,5 @@
-@mixin position($x, $y) {
+@mixin position($x, $y, $d: 0) {
     grid-column-start: $x;
     grid-row-start: $y;
+    transform: rotate($d);
 }

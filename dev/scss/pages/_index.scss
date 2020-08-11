@@ -1,131 +1,40 @@
 body {
     box-sizing: border-box;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     background-color: $background;
-}
-
-.clock {
-    background-color: transparent;
-    display: grid;
-    grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(13, 1fr);
+    font-family: $main-font;
     color: $font-color;
-    border: 5px solid $primary-color;
-    border-radius: 50%;
-
-    width: 80vw;
-    height: 80vw;
-    font-size: $font-size-small;
-    box-shadow: 0px 0px 155px 20px $second-color, inset 0px 0px 155px 20px $second-color;
+    font-family: $font-size-small;
+    overflow: hidden;
 
     @include tablet {
         font-size: $font-size-medium;
     }
 
     @include laptop {
-        width: 90vh;
-        height: 90vh;
         font-size: $font-size-big;
     }
+}
 
-    .number {
-        font-family: $main-font;
-        width: auto;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.header {
+    font-size: 2rem;
+    background-color: #3B3840;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-size-small;
+
+    @include laptop {
+        font-size: $font-size-big;
+        height: 80px;
     }
+}
 
-    .one {
-        @include position(10, 2);
-    }
-
-    .two {
-        @include position(12, 4);
-    }
-
-    .tree {
-        @include position(13, 7);
-    }
-
-    .four {
-        @include position(12, 10);
-    }
-
-    .five {
-        @include position(10, 12);
-    }
-
-    .six {
-        @include position(7, 13);
-
-    }
-
-    .seven {
-        @include position(4, 12);
-
-    }
-
-    .eight {
-        @include position(2, 10);
-
-    }
-
-    .nine {
-        @include position(1, 7);
-    }
-
-    .ten {
-        @include position(2, 4);
-
-    }
-
-    .eleven {
-        @include position(4, 2);
-
-    }
-
-    .twelve {
-        @include position(7, 1);
-    }
-
-    .center {
-        @include position(7, 7);
-        width: 60%;
-        height: 60%;
-        border-radius: 50%;
-        margin: auto auto;
-        z-index: 1000;
-        background-color: $primary-color;
-    }
-
-    .minutes,
-    .hours {
-        clip-path: polygon(40% 5%, 60% 5%, 60% 50%, 40% 50%);
-    }
-
-    .seconds {
-        @include position(7, 2);
-        clip-path: polygon(45% 3%, 55% 3%, 55% 50%, 45% 50%);
-        grid-row-end: 13;
-        background-color: $third-color;
-    }
-
-    .minutes {
-        @include position(7, 2);
-        grid-row-end: 13;
-        background-color: $primary-color;
-    }
-
-    .hours {
-        @include position(7, 4);
-        grid-row-end: 11;
-        z-index: 900;
-        background-color: $second-color;
-    }
+.main {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

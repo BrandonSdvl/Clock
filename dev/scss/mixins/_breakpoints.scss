@@ -1,6 +1,7 @@
-$mobile: 420px;
-$tablet: 421px;
-$laptop: 1250px;
+$mobile: 360px;
+$tablet: 650px;
+$laptop: 1050px;
+$desktop: 1400px;
 
 @mixin mobile {
     @media screen and (max-width: $mobile) {
@@ -16,6 +17,12 @@ $laptop: 1250px;
 
 @mixin laptop {
     @media screen and (min-width: $laptop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop) {
         @content;
     }
 }
