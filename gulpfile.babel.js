@@ -4,7 +4,7 @@ const sass = require("gulp-sass")
 const babel = require("gulp-babel")
 const autoprefixer = require("gulp-autoprefixer")
 const concat = require("gulp-concat")
-const uglify = require("gulp-uglify")
+const terser = require("gulp-terser")
 const plumber = require("gulp-plumber")
 const browserSync = require('browser-sync')
 
@@ -12,8 +12,9 @@ const server = browserSync.create()
 
 gulp.task('pug', () => {
     return gulp.src('./dev/views/*.pug')
+        .pipe(plumber())
         .pipe(pug({
-            pretty: true
+            pretty: false
         }))
         .pipe(gulp.dest('./docs'))
 })
@@ -24,7 +25,7 @@ gulp.task("styles", () => {
         .pipe(plumber())
         .pipe(
             sass({
-                outputStyle: "compact"
+                outputStyle: "compressed"
             })
         )
         .pipe(
@@ -44,7 +45,7 @@ gulp.task("babel", () => {
             })
         )
         .pipe(concat("scripts-min.js"))
-        .pipe(uglify())
+        .pipe(terser())
         .pipe(gulp.dest("./docs/js/"))
 })
 
