@@ -5,7 +5,6 @@ body {
     background-color: #000;
     font-family: $main-font;
     color: $font-color;
-    font-family: $font-size-small;
     overflow: hidden;
 
     @include tablet {
@@ -24,7 +23,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: $font-size-small;
+    font-size: $font-size-medium;
 
     @include laptop {
         font-size: $font-size-big;
