@@ -8,7 +8,7 @@
 
     width: 70vw;
     height: 70vw;
-    box-shadow: 0px 0px 17px 8px $second-color, inset 0px 0px 17px 8px $second-color;
+    box-shadow: 0 0 17px 8px $second-color, inset 0 0 17px 8px $second-color;
 
     @include tablet {
         width: 60vh;
@@ -21,74 +21,76 @@
         border: 10px solid $primary-color;
     }
 
-    .number {
+    &__number {
         width: auto;
         height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: $font-size-small;
-        text-shadow: 0px 0px 10px $primary-color;
+        text-shadow: 0 0 10px $primary-color;
 
         @include laptop {
             font-size: $font-size-big;
         }
+
+
+        &--one {
+            @include position(10, 2, 30deg);
+        }
+
+        &--two {
+            @include position(12, 4, 60deg);
+        }
+
+        &--tree {
+            @include position(13, 7);
+        }
+
+        &--four {
+            @include position(12, 10, 120deg);
+        }
+
+        &--five {
+            @include position(10, 12, 150deg);
+        }
+
+        &--six {
+            @include position(7, 13);
+
+        }
+
+        &--seven {
+            @include position(4, 12, 210deg);
+
+        }
+
+        &--eight {
+            @include position(2, 10, 240deg);
+
+        }
+
+        &--nine {
+            @include position(1, 7);
+        }
+
+        &--ten {
+            @include position(2, 4, 300deg);
+
+        }
+
+        &--eleven {
+            @include position(4, 2, 330deg);
+
+        }
+
+        &--twelve {
+            @include position(7, 1, 360deg);
+        }
+
     }
 
-    .one {
-        @include position(10, 2, 30deg);
-    }
-
-    .two {
-        @include position(12, 4, 60deg);
-    }
-
-    .tree {
-        @include position(13, 7);
-    }
-
-    .four {
-        @include position(12, 10, 120deg);
-    }
-
-    .five {
-        @include position(10, 12, 150deg);
-    }
-
-    .six {
-        @include position(7, 13);
-
-    }
-
-    .seven {
-        @include position(4, 12, 210deg);
-
-    }
-
-    .eight {
-        @include position(2, 10, 240deg);
-
-    }
-
-    .nine {
-        @include position(1, 7);
-    }
-
-    .ten {
-        @include position(2, 4, 300deg);
-
-    }
-
-    .eleven {
-        @include position(4, 2, 330deg);
-
-    }
-
-    .twelve {
-        @include position(7, 1, 360deg);
-    }
-
-    .center {
+    &__center {
         @include position(7, 7);
         width: 20px;
         height: 20px;
