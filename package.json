@@ -9,19 +9,19 @@
   "author": "Brandon Sandoval",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/register": "^7.12.10",
-    "autoprefixer": "^10.2.0",
-    "browser-sync": "^2.26.13",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/register": "^7.14.5",
+    "autoprefixer": "^10.2.6",
+    "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.2.1",
-    "gulp-pug": "^4.0.1",
+    "gulp-pug": "^5.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-terser": "^2.0.0"
+    "gulp-terser": "^2.0.1"
   },
   "dependencies": {}
 }
